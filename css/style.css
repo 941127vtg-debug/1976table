@@ -76,9 +76,6 @@ img {
 
         opacity: 0;
 
-        transition:
-            opacity 0.15s ease;
-
         will-change: left, top;
     }
 
@@ -157,8 +154,6 @@ img {
 
     font: inherit;
     color: inherit;
-
-    cursor: pointer;
 }
 
 
@@ -374,7 +369,7 @@ img {
 
 
 /* ========================
-   WORK
+   WORKS
 ======================== */
 
 .work-page {
@@ -416,14 +411,10 @@ img {
 
     object-fit: cover;
 
-    transition:
-        transform 0.6s ease,
-        opacity 0.3s ease;
-}
-
-.work-item:hover .work-image img {
-    transform: scale(1.025);
-    opacity: 0.9;
+    /* 不做任何動畫 */
+    transition: none;
+    transform: none;
+    opacity: 1;
 }
 
 
@@ -450,9 +441,6 @@ img {
     margin-bottom: 60px;
 }
 
-
-/* CONTACT BANNER */
-
 .contact-hero {
     width: 100%;
 
@@ -466,9 +454,6 @@ img {
 
     object-fit: cover;
 }
-
-
-/* CONTACT SERVICES */
 
 .contact-services {
     display: flex;
@@ -487,9 +472,6 @@ img {
     margin-bottom: 90px;
 }
 
-
-/* CONTACT INFO */
-
 .contact-info {
     display: flex;
 
@@ -501,9 +483,6 @@ img {
 
     gap: 50px;
 }
-
-
-/* CONTACT PNG */
 
 .contact-brand {
     display: flex;
@@ -522,9 +501,6 @@ img {
     object-fit: contain;
 }
 
-
-/* CONTACT LABEL */
-
 .contact-label {
     font-size: 16px;
 
@@ -532,9 +508,6 @@ img {
 
     margin-bottom: 12px;
 }
-
-
-/* FACEBOOK / INSTAGRAM */
 
 .contact-block a {
     font-size: 20px;
@@ -547,9 +520,6 @@ img {
 .contact-block a:hover {
     opacity: 0.4;
 }
-
-
-/* ADDRESS */
 
 .contact-block > p:not(.contact-label) {
     font-size: 20px;
@@ -686,7 +656,7 @@ img {
     }
 
 
-    /* WORK */
+    /* WORKS */
 
     .work-page {
         padding:
