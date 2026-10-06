@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>FAQ 問答 — 工房1976製桌所</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        /* FAQ 頁面 */
+
+        .faq-body .site-header {
+            background: #ffffff;
+        }
+
+        .faq-page {
+            width: 100%;
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 160px 5vw 100px;
+        }
+
+        .faq-heading {
+            margin-bottom: 60px;
+        }
+
+        .faq-heading h1 {
+            font-size: 36px;
+            font-weight: 400;
+            letter-spacing: 0.13em;
+        }
+
+        .faq-heading h1 span {
+            margin-left: 18px;
+            font-size: 22px;
+        }
+
+        .faq-list {
+            max-width: 900px;
+            margin: 0 auto;
+            border-top: 1px solid #d5d5d5;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid #d5d5d5;
+            scroll-margin-top: 100px;
+        }
+
+        .faq-item summary {
+            display: grid;
+            grid-template-columns: 50px minmax(0, 1fr) 20px;
+            gap: 18px;
+            align-items: baseline;
+
+            padding: 27px 0;
+
+            font-size: 18px;
+            line-height: 1.65;
+
+            list-style: none;
+            cursor: pointer;
+        }
+
+        .faq-item summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .faq-item summary:focus-visible {
+            outline: 2px solid #111111;
+            outline-offset: 4px;
+        }
+
+        .faq-number {
+            font-size: 14px;
+            letter-spacing: 0.04em;
+        }
+
+        /* 收合時為加號，展開時為減號 */
+
+        .faq-toggle {
+            position: relative;
+            align-self: center;
+
+            width: 16px;
+            height: 16px;
+        }
+
+        .faq-toggle::before,
+        .faq-toggle::after {
+            content: "";
+            position: absolute;
+            background: currentColor;
+        }
+
+        .faq-toggle::before {
+            top: 7px;
+            left: 0;
+            width: 16px;
+            height: 1px;
+        }
+
+        .faq-toggle::after {
+            top: 0;
+            left: 7px;
+            width: 1px;
+            height: 16px;
+        }
+
+        .faq-item[open] .faq-toggle::after {
+            display: none;
+        }
+
+        .faq-answer {
+            padding: 0 38px 30px 68px;
+
+            font-size: 17px;
+            line-height: 1.9;
+            letter-spacing: 0.025em;
+
+            overflow-wrap: anywhere;
+        }
+
+        .faq-answer p + p {
+            margin-top: 16px;
+        }
+
+        .faq-answer ol {
+            margin: 16px 0;
+            padding-left: 1.5em;
+        }
+
+        .faq-answer li + li {
+            margin-top: 4px;
+        }
+
+        .faq-contact {
+            max-width: 900px;
+            margin: 55px auto 0;
+
+            font-size: 16px;
+            letter-spacing: 0.06em;
+        }
+
+        .faq-contact a {
+            display: inline-block;
+            padding: 12px 0;
+            border-bottom: 1px solid #111111;
+        }
+
+        .faq-contact span {
+            margin-left: 18px;
+        }
+
+        .faq-body [aria-current="page"] {
+            text-decoration: underline;
+            text-underline-offset: 6px;
+        }
+
+        /* 保留原網站黑色圓形游標 */
+
+        @media (hover: hover) and (pointer: fine) {
+            .faq-item summary {
+                cursor: none !important;
+            }
+        }
+
+        /* 手機版 */
+
+        @media (max-width: 768px) {
+            .faq-page {
+                padding: 110px 18px 70px;
+            }
+
+            .faq-heading {
+                margin-bottom: 38px;
+            }
+
+            .faq-heading h1 {
+                font-size: 27px;
+            }
+
+            .faq-heading h1 span {
+                margin-left: 12px;
+                font-size: 20px;
+            }
+
+            .faq-item summary {
+                grid-template-columns: 32px minmax(0, 1fr) 16px;
+                gap: 10px;
+
+                padding: 22px 0;
+                font-size: 16px;
+            }
+
+            .faq-number {
+                font-size: 12px;
+            }
+
+            .faq-answer {
+                padding: 0 0 25px 42px;
+                font-size: 15px;
+            }
+        }
+    </style>
+</head>
+
+<body class="faq-body">
+
+<header class="site-header">
+
+    <a href="index.html" class="logo">
+        <img
+            src="assets/images/logo.png"
+            alt="工房1976製桌所"
+            class="site-logo"
+        >
+    </a>
+
+    <nav class="desktop-nav">
+        <a href="index.html">首頁 HOME</a>
+        <a href="about.html">關於 ABOUT</a>
+        <a href="work.html">作品 WORKS</a>
+        <a href="faq.html" aria-current="page">問答 FAQ</a>
+        <a href="contact.html">聯絡 CONTACT</a>
+    </nav>
+
+    <button class="menu-button" type="button">
+        MENU
+    </button>
+
+</header>
+
+<div class="mobile-menu">
+    <a href="index.html">首頁 HOME</a>
+    <a href="about.html">關於 ABOUT</a>
+    <a href="work.html">作品 WORKS</a>
+    <a href="faq.html" aria-current="page">問答 FAQ</a>
+    <a href="contact.html">聯絡 CONTACT</a>
+</div>
+
+<main class="faq-page">
+
+    <header class="faq-heading">
+        <h1>FAQ <span>問答</span></h1>
+    </header>
+
+    <section class="faq-list" aria-label="常見問題">
+
+        <details class="faq-item" id="q1">
+            <summary>
+                <span class="faq-number">Q1</span>
+                <span>桌子可以訂製尺寸嗎？</span>
+                <span class="faq-toggle" aria-hidden="true"></span>
+            </summary>
+
+            <div class="faq-answer">
+                <p>
+                    可以。<br>
+                    我們以訂製為主，可以依照您的空間大小、使用需求與喜歡的比例，調整桌子的長、寬、高。
+                </p>
+                <p>
+                    如果不確定什麼尺寸適合，也可以提供空間照片、預計擺放位置及使用人數，我們會協助您評估。
+                </p>
+            </div>
+        </details>
+
+        <details class="faq-item" id="q2">
+            <summary>
+                <span class="faq-number">Q2</span>
+                <span>可以選擇木材嗎？</span>
+                <span class="faq-toggle" aria-hidden="true"></span>
+            </summary>
+
+            <div class="faq-answer">
+                <p>
+                    可以。<br>
+                    不同木種會有不同的色澤、紋理、硬度與價格，我們會依照目前木料狀況及您的預算提供建議。
+                </p>
+                <p>
+                    天然實木每一塊的木紋、節點與色差都不同，這也是實木家具獨一無二的迷人地之處。
+                </p>
+            </div>
+        </details>
+
+        <details class="faq-item" id="q3">
+            <summary>
+                <span class="faq-number">Q3</span>
+                <span>照片上的木紋，可以做成一模一樣嗎？</span>
+                <span class="faq-toggle" aria-hidden="true"></span>
+            </summary>
+
+            <div class="faq-answer">
+                <p>無法完全一模一樣。</p>
+                <p>
+                    天然木材不是人工印刷材料，每一塊木頭都有自己的紋理與自然痕跡。
+                </p>
+                <p>
+                    我們可以依照您喜歡的風格協助挑選，但無法複製出完全相同的木紋。
+                </p>
+            </div>
+        </details>
+
+        <details class="faq-item" id="q4">
+            <summary>
+                <span class="faq-number">Q4</span>
+                <span>木頭有裂痕、節疤，是不是瑕疵？</span>
+                <span class="faq-toggle" aria-hidden="true"></span>
+            </summary>
+
+            <div class="faq-answer">
+                <p>不一定。</p>
+                <p>
+                    實木會保留部分細微裂紋或自然痕跡，這些屬於木材本身的特色。
+                </p>
+                <p>
+                    製作過程中，我們會依照結構安全與美觀進行整理與補強，但不會刻意把天然木材做得如工業製品一樣完全一致。
+                </p>
+            </div>
+        </details>
+
+        <details class="faq-item" id="q5">
+            <summary>
+                <span class="faq-number">Q5</span>
+                <span>桌板會不會變形或開裂？</span>
+                <span class="faq-toggle" aria-hidden="true"></span>
+            </summary>
+
+            <div class="faq-answer">
+                <p>
+                    實木具有吸濕與排濕的自然特性，會隨著季節、溫度與環境濕度產生些微伸縮。
+                </p>
+                <p>
+                    我們在製作時會盡可能做好木材乾燥、結構設計與施工處理，但實木仍可能因使用環境產生些微伸縮、細裂或自然變化。
+                </p>
+                <p>
+                    建議避免長期日曬、冷氣出風口直吹、過度潮濕或極端乾燥的環境。
+                </p>
+            </div>
+        </details>
+
+        <details class="faq-item" id="q6">
+            <summary>
+                <span class="faq-number">Q6</span>
+                <span>桌面怕水、怕熱嗎？</span>
+                <span class="faq-toggle" aria-hidden="true"></span>
+            </summary>
+
+            <div class="faq-answer">
+                <p>日常使用沒有問題，但仍建議正常保養。</p>
+                <p>
+                    飲料、水漬請盡量及時擦乾；熱鍋、熱水壺或高溫器皿建議使用隔熱墊，不要直接長時間放置於桌面。
+                </p>
+                <p>
+                    正確使用與保養，可以讓實木桌陪伴您更久。
+                </p>
+            </div>
+        </details>
+
+        <details class="faq-item" id="q7">
+            <summary>
+                <span class="faq-number">Q7</span>
+                <span>可以選桌腳嗎？</span>
+                <span class="faq-toggle" aria-hidden="true"></span>
+            </summary>
+
+            <div class="faq-answer">
+                <p>可以。</p>
+                <p>
+                    可依桌板尺寸、使用方式及整體風格討論桌腳材質與形式，例如：
+                </p>
+                <p>
+                    木製桌腳、鐵件桌腳、簡約直腳、斜腳或其他適合的結構形式。
+                </p>
+                <p>
+                    我們也會考量桌子的穩定度與受力，綜合考慮最佳造型。
+                </p>
+            </div>
+        </details>
+
+        <details class="faq-item" id="q8">
+            <summary>
+                <span class="faq-number">Q8</span>
+                <span>可以只買桌板嗎？</span>
+                <span class="faq-toggle" aria-hidden="true"></span>
+            </summary>
+
+            <div class="faq-answer">
+                <p>可以依實際需求詢問。</p>
+                <p>
+                    如果您已有桌腳，建議先提供桌腳尺寸、鎖點及照片，我們會協助確認桌板是否適合搭配。
+                </p>
+            </div>
+        </details>
+
+        <details class="faq-item" id="q9">
+            <summary>
+                <span class="faq-number">Q9</span>
+                <span>訂製桌需要多久？</span>
+                <span class="faq-toggle" aria-hidden="true"></span>
+            </summary>
+
+            <div class="faq-answer">
+                <p>
+                    製作時間會依木料、尺寸、設計內容以及目前訂單排程而不同。
+                </p>
+                <p>
+                    訂製家具不是大量庫存商品，每一件都需要經過選料、裁切、整平、研磨、組裝及表面處理。
+                </p>
+                <p>
+                    確認訂單時，我們會告知預估製作時間。
+                </p>
+            </div>
+        </details>
+
+        <details class="faq-item" id="q10">
+            <summary>
+                <span class="faq-number">Q10</span>
+                <span>如何詢價？</span>
+                <span class="faq-toggle" aria-hidden="true"></span>
+            </summary>
+
+            <div class="faq-answer">
+                <p>您可以提供以下資料：</p>
+
+                <ol>
+                    <li>想要的桌子尺寸</li>
+                    <li>用途，例如餐桌、工作桌、書桌、會議桌</li>
+                    <li>喜歡的木色或木種</li>
+                    <li>喜歡的桌型參考照片</li>
+                    <li>預算範圍</li>
+                    <li>配送地區</li>
+                </ol>
+
+                <p>
+                    資料越完整，我們越能快速提供適合您的建議與報價。
+                </p>
+            </div>
+        </details>
+
+        <details class="faq-item" id="q11">
+            <summary>
+                <span class="faq-number">Q11</span>
+                <span>為什麼訂製家具沒有固定價格？</span>
+                <span class="faq-toggle" aria-hidden="true"></span>
+            </summary>
+
+            <div class="faq-answer">
+                <p>
+                    因為價格會受到木種、桌板尺寸、厚度、木料等級、桌腳形式、加工方式與表面處理等因素影響。
+                </p>
+                <p>
+                    即使看起來尺寸相近的兩張桌子，也可能因木料與製作方式不同而有價格差異。
+                </p>
+                <p>
+                    我們希望先了解您的需求，再提供適合的製作方案，而不是單純用最低價格決定一張桌子。
+                </p>
+            </div>
+        </details>
+
+        <details class="faq-item" id="q12">
+            <summary>
+                <span class="faq-number">Q12</span>
+                <span>可以按照網路上的照片訂做嗎？</span>
+                <span class="faq-toggle" aria-hidden="true"></span>
+            </summary>
+
+            <div class="faq-answer">
+                <p>可以提供照片作為「風格與需求參考」。</p>
+                <p>
+                    我們可以依照您喜歡的比例、線條、材質與使用需求，重新規劃適合的設計，但不以完全複製其他品牌作品為製作方式。
+                </p>
+            </div>
+        </details>
+
+        <details class="faq-item" id="q13">
+            <summary>
+                <span class="faq-number">Q13</span>
+                <span>可以到現場看木料或成品嗎？</span>
+                <span class="faq-toggle" aria-hidden="true"></span>
+            </summary>
+
+            <div class="faq-answer">
+                <p>可以預約洽詢。</p>
+                <p>
+                    因為工坊主要以製作工作為主，建議來訪前先聯絡確認時間。
+                </p>
+            </div>
+        </details>
+
+        <details class="faq-item" id="q14">
+            <summary>
+                <span class="faq-number">Q14</span>
+                <span>你們有現貨嗎？</span>
+                <span class="faq-toggle" aria-hidden="true"></span>
+            </summary>
+
+            <div class="faq-answer">
+                <p>
+                    部分時候會有現成作品或已完成的桌板，但主要仍以訂製為主。
+                </p>
+                <p>
+                    如果希望較快交貨，可以先詢問目前工坊是否有適合的現貨。
+                </p>
+            </div>
+        </details>
+
+        <details class="faq-item" id="q15">
+            <summary>
+                <span class="faq-number">Q15</span>
+                <span>可以配送嗎？</span>
+                <span class="faq-toggle" aria-hidden="true"></span>
+            </summary>
+
+            <div class="faq-answer">
+                <p>可以。</p>
+                <p>
+                    配送方式與費用會依家具尺寸、樓層、電梯條件及配送地區而不同。
+                </p>
+                <p>大型桌子下單前，建議先確認：</p>
+                <p>
+                    大門寬度、樓梯尺寸、電梯尺寸以及家具搬運動線。
+                </p>
+            </div>
+        </details>
+
+        <details class="faq-item" id="q16">
+            <summary>
+                <span class="faq-number">Q16</span>
+                <span>到貨後需要自己組裝嗎？</span>
+                <span class="faq-toggle" aria-hidden="true"></span>
+            </summary>
+
+            <div class="faq-answer">
+                <p>會依桌型及配送方式而定。</p>
+                <p>
+                    部分大型桌子會採桌板與桌腳分開運送，到現場再進行組裝，以降低搬運過程碰撞的風險。
+                </p>
+            </div>
+        </details>
+
+        <details class="faq-item" id="q17">
+            <summary>
+                <span class="faq-number">Q17</span>
+                <span>收到家具後發現問題怎麼辦？</span>
+                <span class="faq-toggle" aria-hidden="true"></span>
+            </summary>
+
+            <div class="faq-answer">
+                <p>收到商品後，建議先檢查外觀與結構。</p>
+                <p>
+                    如果有運送碰撞、結構異常或其他問題，請盡快拍照或錄影與我們聯絡，我們會依實際情況協助處理。
+                </p>
+                <p>
+                    天然木紋、節點、色差及正常的實木自然變化，則不屬於商品瑕疵。
+                </p>
+            </div>
+        </details>
+
+        <details class="faq-item" id="q18">
+            <summary>
+                <span class="faq-number">Q18</span>
+                <span>實木桌平常怎麼保養？</span>
+                <span class="faq-toggle" aria-hidden="true"></span>
+            </summary>
+
+            <div class="faq-answer">
+                <p>其實不需要太複雜。</p>
+                <p>
+                    平常使用柔軟的乾布或微濕布擦拭即可，避免使用強酸、強鹼或刺激性清潔劑。
+                </p>
+                <p>
+                    也建議避免長時間積水、陽光曝曬及高溫物品直接接觸桌面。
+                </p>
+                <p>
+                    使用一段時間後，如果桌面因日常使用產生痕跡，也可以詢問我們後續整理與保養方式。
+                </p>
+            </div>
+        </details>
+
+        <details class="faq-item" id="q19">
+            <summary>
+                <span class="faq-number">Q19</span>
+                <span>為什麼選擇工坊訂製，而不是直接買量產家具？</span>
+                <span class="faq-toggle" aria-hidden="true"></span>
+            </summary>
+
+            <div class="faq-answer">
+                <p>訂製的價值，不只在於「做一張桌子」。</p>
+                <p>
+                    我們會從您的空間、使用人數、生活方式與喜歡的木頭開始，慢慢決定尺寸、比例、木料與結構。
+                </p>
+                <p>
+                    天然木材不追求每一張都完全一樣，而是讓每一張桌子保有自己的紋理與生命。
+                </p>
+            </div>
+        </details>
+
+    </section>
+
+    <div class="faq-contact">
+        <a href="contact.html">
+            聯絡我們 CONTACT
+            <span aria-hidden="true">↗</span>
+        </a>
+    </div>
+
+</main>
+
+<script src="js/main.js"></script>
+
+</body>
+</html>
